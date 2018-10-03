@@ -3,13 +3,12 @@
 #include <time.h>
 
 int main() {
-	long int currNumber = 5;
+	long int currNumber = 1;
 	int counter = 2;
-	printf("1 2 ");
 	time_t time_start = clock();
 	while(!kbhit()) {
 		int found = 0;
-		long int i=2;
+		long int i = 2;
 		do {
 			if(currNumber%i == 0)
 				found = 1;
