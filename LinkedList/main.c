@@ -65,9 +65,12 @@ void removeAtRange(List* list, int index_min, int index_max) {
 	if(getListLength(list) > index_max && index_max > index_min) {
 		List* temp;
 		for(int i=0;i!=index_max-1;i++) {
+			List* free_this = list;
 			list = list->next;
 			if(i == index_min-3)
 				temp = list;
+			else if(i > index_min-2)
+				free(free_this);				
 		}		
 		temp->next = list->next;
 		free(list);
